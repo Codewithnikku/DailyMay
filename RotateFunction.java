@@ -1,4 +1,4 @@
-class Solution {
+class RFunction {
     public int maxRotateFunction(int[] nums) {
         int n = nums.length;
         int sum = 0;
@@ -20,8 +20,10 @@ class Solution {
     }
 }
 
-public class Main {
+public class RotateFunction {
     public static void main(String[] args) {
-        
+        RFunction solution = new RFunction();
+        int[] nums = {4, 3, 2, 6};
+        System.out.println(solution.maxRotateFunction(nums));
     }
 }
