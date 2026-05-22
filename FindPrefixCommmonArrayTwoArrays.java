@@ -1,26 +1,38 @@
-class FPCATA {
+import java.util.*;
+
+class FCPATA {
     public int[] findThePrefixCommonArray(int[] A, int[] B) {
-        int n = A.length;
-        int[] ans = new int[n];
-        boolean[] seenA = new boolean[n + 1];
-        boolean[] seenB = new boolean[n + 1];
-        int commonCount = 0;
+        HashMap<Integer, Integer> mp = new HashMap<>();
 
-        for (int i = 0; i < n; i++) {
-            seenA[A[i]] = true;
-            seenB[B[i]] = true;
+        int count = 0;
 
-            if (seenA[A[i]] && seenB[A[i]]) {
-                commonCount++;
-            }
-            if (seenA[B[i]] && seenB[B[i]] && A[i] != B[i]) {
-                commonCount++;
+        for(int i = 0; i < A.length; i++) {
+
+            if(A[i] == B[i]) {
+                mp.put(A[i],
+                mp.getOrDefault(A[i], 0) + 2);
+                count++;
             }
 
-            ans[i] = commonCount;
+            else {
+                mp.put(A[i],
+                mp.getOrDefault(A[i], 0) + 1);
+
+                mp.put(B[i],
+                mp.getOrDefault(B[i], 0) + 1);
+
+                if(mp.get(A[i]) == 2) {
+                    count++;
+                }
+                if(mp.get(B[i]) == 2) {
+                    count++;
+                }
+            }
+
+            A[i] = count;
         }
 
-        return ans;
+        return A;
     }
 }
 
