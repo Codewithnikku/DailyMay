@@ -38,7 +38,7 @@ class FCPATA {
 
 public class FindPrefixCommmonArrayTwoArrays {
     public static void main(String[] args) {
-        FPCATA fpcata = new FPCATA();
+        FCPATA fpcata = new FCPATA();
         int[] A = {1, 2, 3, 4};
         int[] B = {2, 1, 4, 3};
         int[] result = fpcata.findThePrefixCommonArray(A, B);
